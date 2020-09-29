@@ -25,7 +25,7 @@ public:
      * Maps the given file using mmap function.
      * If the mapping fails, textPtr is set to nullptr and textSize is set to 0.
      * Constructor also ensures that the given file is POSIX-like (ends with '\\n') - just adds '\\n' to the end of the text.
-     * @param filePath path to the file to map
+     * @param[in] filePath path to the file to map
      */
     explicit MappedFile(const char* filePath);
 

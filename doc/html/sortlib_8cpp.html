@@ -117,8 +117,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Compares two Lines in direct (from left to right) order. Punctuation and space symbols are skipped - only letters are compared. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
-    <tr><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
   </table>
   </dd>
 </dl>
@@ -153,8 +153,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Compares two Lines in reverse (from right to left) order. Punctuation and space symbols are skipped - only letters are compared. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
-    <tr><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
   </table>
   </dd>
 </dl>
@@ -195,9 +195,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sorts vector of Lines with a given comparator. Sort is performed in range [begin; end). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">begin</td><td>iterator to the start (inclusive) of the sorting range </td></tr>
-    <tr><td class="paramname">end</td><td>iterator to the end (exclusive) ot the sorting range </td></tr>
-    <tr><td class="paramname">compare</td><td>pointer to the comparator. Comparator should return: negative value, if a &lt; b; positive value, if a &gt; b; zero, if a == b. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">begin</td><td>iterator to the start (inclusive) of the sorting range </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>iterator to the end (exclusive) ot the sorting range </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">compare</td><td>pointer to the comparator. Comparator should return: negative value, if a &lt; b; positive value, if a &gt; b; zero, if a == b. </td></tr>
   </table>
   </dd>
 </dl>
