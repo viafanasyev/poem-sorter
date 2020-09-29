@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Source file with sorting functions description
+ * @brief Header file with sorting functions description
  */
 #ifndef POEM_SORTER_SORTLIB_H
 #define POEM_SORTER_SORTLIB_H

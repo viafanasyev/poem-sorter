@@ -9,5 +9,6 @@ var searchData=
   ['testlib_5fassert_5ffailed_32',['TESTLIB_ASSERT_FAILED',['../testlib_8h.html#a17f8ea0df49d4709f5de8bb764d2d2bf',1,'testlib.h']]],
   ['testlib_5feps_33',['TESTLIB_EPS',['../testlib_8h.html#a06c1d086c6645f3a4c71bdff6db3ff66',1,'testlib.h']]],
   ['testptr_34',['TestPtr',['../testlib_8h.html#a26f42fe409ceef9342106ce8d61d2ab1',1,'testlib.h']]],
-  ['testrunner_35',['TestRunner',['../class_test_runner.html',1,'']]]
+  ['testrunner_35',['TestRunner',['../class_test_runner.html',1,'']]],
+  ['text_5fhelpers_2eh_36',['text_helpers.h',['../text__helpers_8h.html',1,'']]]
 ];
