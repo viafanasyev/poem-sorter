@@ -44,10 +44,13 @@ std::vector<Line> splitLines(char* start, size_t len) {
  * @param[in] fileName name of the file to write the lines in
  */
 void writeLines(const std::vector<Line>& lines, const char* fileName) {
+    assert(fileName != nullptr);
+
     FILE* file = fopen(fileName, "w");
     for (auto [start, _] : lines) {
         fprintf(file, "%s\n", start);
     }
+    fclose(file);
 }
 
 /**
@@ -56,6 +59,8 @@ void writeLines(const std::vector<Line>& lines, const char* fileName) {
  * @param[in] fileName name of the file to write the lines in
  */
 void writeSortedDirect(std::vector<Line> lines, const char* fileName) {
+    assert(fileName != nullptr);
+
     sortLines(lines.begin(), lines.end(), compareLinesDirect);
     writeLines(lines, fileName);
 }
@@ -66,6 +71,8 @@ void writeSortedDirect(std::vector<Line> lines, const char* fileName) {
  * @param[in] fileName name of the file to write the lines in
  */
 void writeSortedReverse(std::vector<Line> lines, const char* fileName) {
+    assert(fileName != nullptr);
+
     sortLines(lines.begin(), lines.end(), compareLinesReverse);
     writeLines(lines, fileName);
 }
@@ -76,6 +83,8 @@ void writeSortedReverse(std::vector<Line> lines, const char* fileName) {
  * @param[in] fileName name of the file to write the lines in
  */
 void writeOriginal(const std::vector<Line>& lines, const char* fileName) {
+    assert(fileName != nullptr);
+
     writeLines(lines, fileName);
 }
 
