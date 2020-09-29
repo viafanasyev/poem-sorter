@@ -7,10 +7,20 @@ add_compile_options(-Wall -Wextra -pedantic -Werror -Wfloat-equal)
 
 add_executable(
         sorter
-        src/main.cpp)
+        src/main.cpp
+        src/sortlib.h
+        src/sortlib.cpp
+        src/MappedFile.cpp
+        src/MappedFile.h)
 
 add_executable(
         tests
         test/testlib.h
         test/testlib.cpp
-        test/main.cpp)
+        test/main.cpp
+        test/sortlib_tests.cpp
+        test/MappedFile_tests.cpp
+        src/sortlib.h
+        src/sortlib.cpp
+        src/MappedFile.cpp
+        src/MappedFile.h)
