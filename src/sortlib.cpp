@@ -3,67 +3,101 @@
  * @brief Source file with sorting functions implementation
  */
 #include <cassert>
-#include <iostream>
 #include "sortlib.h"
-
-Line::Line(const char* _lineStart, const char* _lineEnd) {
-    lineStart = _lineStart;
-    lineEnd = _lineEnd;
-}
 
 /**
  * Compares two Lines in direct (from left to right) order. Punctuation and space symbols are skipped - only letters are compared.
+ * Supports english and russian letters in UTF-8 encoding.
  * @param[in] str1 first Line to compare
  * @param[in] str2 second Line to compare
- * @return negative number, if first Line is less than second;
- *         positive number, if first Line is greater than second;
+ * @return negative number, if first Line is less than second; <br>
+ *         positive number, if first Line is greater than second; <br>
  *         zero,            if both Lines are equal.
  */
 int compareLinesDirect(const Line& str1, const Line& str2) {
     const char* ptr1 = str1.lineStart;
     const char* ptr2 = str2.lineStart;
 
+    unsigned short alphaSize1 = 0;
+    unsigned short alphaSize2 = 0;
+
     while (ptr1 <= str1.lineEnd && ptr2 <= str2.lineEnd) {
-        while (ptr1 <= str1.lineEnd && (tolower(*ptr1) < 'a' || tolower(*ptr1) > 'z')) ++ptr1;
-        while (ptr2 <= str2.lineEnd && (tolower(*ptr2) < 'a' || tolower(*ptr2) > 'z')) ++ptr2;
+        alphaSize1 = seekAlphaDirect(ptr1, str1.lineEnd);
+        alphaSize2 = seekAlphaDirect(ptr2, str2.lineEnd);
 
-        if (*ptr1 < *ptr2) return -1;
-        if (*ptr1 > *ptr2) return 1;
+        if (ptr1 > str1.lineEnd && ptr2 > str2.lineEnd) return 0;
+        if (ptr1 > str1.lineEnd) return -1;
+        if (ptr2 > str2.lineEnd) return +1;
 
-        ++ptr1;
-        ++ptr2;
+        if (alphaSize1 < alphaSize2) return -1;
+        if (alphaSize1 > alphaSize2) return +1;
+
+        if (alphaSize1 == 1) {
+            int cmpResult = compareEnglishAlphas(*ptr1, *ptr2);
+            if (cmpResult != 0) return cmpResult;
+        } else { // if alphaSize1 == 2
+            int cmpResult = compareRussianAlphas(*ptr1, *(ptr1 + 1), *ptr2, *(ptr2 + 1));
+            if (cmpResult != 0) return cmpResult;
+        }
+
+        ptr1 += alphaSize1;
+        ptr2 += alphaSize2;
     }
 
-    if (ptr1 <= str1.lineEnd) return 1;
-    if (ptr2 <= str2.lineEnd) return -1;
+    // To remove trailing punctuation signs
+    seekAlphaDirect(ptr1, str1.lineEnd);
+    seekAlphaDirect(ptr2, str2.lineEnd);
+
+    if (ptr1 > str1.lineEnd && ptr2 <= str2.lineEnd) return -1;
+    if (ptr2 > str2.lineEnd && ptr1 <= str1.lineEnd) return +1;
     return 0;
 }
 
 /**
  * Compares two Lines in reverse (from right to left) order. Punctuation and space symbols are skipped - only letters are compared.
+ * Supports english and russian letters in UTF-8 encoding.
  * @param[in] str1 first Line to compare
  * @param[in] str2 second Line to compare
- * @return negative number, if first Line is less than second;
- *         positive number, if first Line is greater than second;
+ * @return negative number, if first Line is less than second; <br>
+ *         positive number, if first Line is greater than second; <br>
  *         zero,            if both Lines are equal.
  */
 int compareLinesReverse(const Line& str1, const Line& str2) {
     const char* ptr1 = str1.lineEnd;
     const char* ptr2 = str2.lineEnd;
 
+    unsigned short alphaSize1 = 0;
+    unsigned short alphaSize2 = 0;
+
     while (ptr1 >= str1.lineStart && ptr2 >= str2.lineStart) {
-        while (ptr1 >= str1.lineStart && (tolower(*ptr1) < 'a' || tolower(*ptr1) > 'z')) --ptr1;
-        while (ptr2 >= str2.lineStart && (tolower(*ptr2) < 'a' || tolower(*ptr2) > 'z')) --ptr2;
+        alphaSize1 = seekAlphaReverse(ptr1, str1.lineStart);
+        alphaSize2 = seekAlphaReverse(ptr2, str2.lineStart);
 
-        if (*ptr1 < *ptr2) return -1;
-        if (*ptr1 > *ptr2) return 1;
+        if (ptr1 < str1.lineStart && ptr2 < str2.lineStart) return 0;
+        if (ptr1 < str1.lineStart) return -1;
+        if (ptr2 < str2.lineStart) return +1;
 
-        --ptr1;
-        --ptr2;
+        if (alphaSize1 < alphaSize2) return -1;
+        if (alphaSize1 > alphaSize2) return +1;
+
+        if (alphaSize1 == 1) {
+            int cmpResult = compareEnglishAlphas(*ptr1, *ptr2);
+            if (cmpResult != 0) return cmpResult;
+        } else { // if alphaSize1 == 2
+            int cmpResult = compareRussianAlphas(*(ptr1 - 1), *ptr1, *(ptr2 - 1), *ptr2);
+            if (cmpResult != 0) return cmpResult;
+        }
+
+        ptr1 -= alphaSize1;
+        ptr2 -= alphaSize2;
     }
 
-    if (ptr1 >= str1.lineStart) return 1;
-    if (ptr2 >= str2.lineStart) return -1;
+    // To remove leading punctuation signs
+    seekAlphaReverse(ptr1, str1.lineStart);
+    seekAlphaReverse(ptr2, str2.lineStart);
+
+    if (ptr1 < str1.lineStart && ptr2 >= str2.lineStart) return -1;
+    if (ptr2 < str2.lineStart && ptr1 >= str1.lineStart) return +1;
     return 0;
 }
 
@@ -72,10 +106,10 @@ int compareLinesReverse(const Line& str1, const Line& str2) {
  * Sort is performed in range [begin; end).
  * @param[in] begin   iterator to the start (inclusive) of the sorting range
  * @param[in] end     iterator to the end (exclusive) ot the sorting range
- * @param[in] compare pointer to the comparator. Comparator should return:
- *                      negative value, if a \< b;
- *                      positive value, if a > b;
- *                      zero, if a == b.
+ * @param[in] compare pointer to the comparator. Comparator should return: <br>
+ *                      negative value, if a \< b; <br>
+ *                      positive value, if a \> b; <br>
+ *                      zero,           if a == b.
  */
 void sortLines(
         std::vector<Line>::iterator begin,

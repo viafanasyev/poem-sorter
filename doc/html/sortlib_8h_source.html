@@ -74,30 +74,25 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define POEM_SORTER_SORTLIB_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_line.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_line.html">Line</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* lineStart;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* lineEnd;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="struct_line.html">Line</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* _lineStart, <span class="keyword">const</span> <span class="keywordtype">char</span>* _lineEnd);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="text__helpers_8h.html">text_helpers.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sortlib_8h.html#a73fb0070eeeb922b6e67c973c90c14b5">compareLinesDirect</a>(<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str1, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str2);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sortlib_8h.html#a73fb0070eeeb922b6e67c973c90c14b5">compareLinesDirect</a>(<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str1, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str2);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sortlib_8h.html#a1eb9da60fffec93dc41a1ac3551ee473">compareLinesReverse</a>(<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str1, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str2);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">int</span> <a class="code" href="sortlib_8h.html#a1eb9da60fffec93dc41a1ac3551ee473">compareLinesReverse</a>(<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str1, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp; str2);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sortlib_8h.html#a91c54e0a462318025948a3ad0154bab9">sortLines</a>(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::vector&lt;Line&gt;::iterator begin,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::vector&lt;Line&gt;::iterator end,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">int</span> (*compare) (<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp;, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp;)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif //POEM_SORTER_SORTLIB_H</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="sortlib_8h.html#a91c54e0a462318025948a3ad0154bab9">sortLines</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        std::vector&lt;Line&gt;::iterator begin,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::vector&lt;Line&gt;::iterator end,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> (*compare) (<span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp;, <span class="keyword">const</span> <a class="code" href="struct_line.html">Line</a>&amp;)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif //POEM_SORTER_SORTLIB_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astruct_line_html"><div class="ttname"><a href="struct_line.html">Line</a></div><div class="ttdef"><b>Definition:</b> sortlib.h:14</div></div>
-<div class="ttc" id="asortlib_8h_html_a91c54e0a462318025948a3ad0154bab9"><div class="ttname"><a href="sortlib_8h.html#a91c54e0a462318025948a3ad0154bab9">sortLines</a></div><div class="ttdeci">void sortLines(std::vector&lt; Line &gt;::iterator begin, std::vector&lt; Line &gt;::iterator end, int(*compare)(const Line &amp;, const Line &amp;))</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:80</div></div>
-<div class="ttc" id="asortlib_8h_html_a73fb0070eeeb922b6e67c973c90c14b5"><div class="ttname"><a href="sortlib_8h.html#a73fb0070eeeb922b6e67c973c90c14b5">compareLinesDirect</a></div><div class="ttdeci">int compareLinesDirect(const Line &amp;str1, const Line &amp;str2)</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:22</div></div>
-<div class="ttc" id="asortlib_8h_html_a1eb9da60fffec93dc41a1ac3551ee473"><div class="ttname"><a href="sortlib_8h.html#a1eb9da60fffec93dc41a1ac3551ee473">compareLinesReverse</a></div><div class="ttdeci">int compareLinesReverse(const Line &amp;str1, const Line &amp;str2)</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:50</div></div>
+<div class="ttc" id="astruct_line_html"><div class="ttname"><a href="struct_line.html">Line</a></div><div class="ttdef"><b>Definition:</b> text_helpers.h:15</div></div>
+<div class="ttc" id="asortlib_8h_html_a91c54e0a462318025948a3ad0154bab9"><div class="ttname"><a href="sortlib_8h.html#a91c54e0a462318025948a3ad0154bab9">sortLines</a></div><div class="ttdeci">void sortLines(std::vector&lt; Line &gt;::iterator begin, std::vector&lt; Line &gt;::iterator end, int(*compare)(const Line &amp;, const Line &amp;))</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:114</div></div>
+<div class="ttc" id="atext__helpers_8h_html"><div class="ttname"><a href="text__helpers_8h.html">text_helpers.h</a></div><div class="ttdoc">Header file with description of helper functions for UTF-8 text.</div></div>
+<div class="ttc" id="asortlib_8h_html_a73fb0070eeeb922b6e67c973c90c14b5"><div class="ttname"><a href="sortlib_8h.html#a73fb0070eeeb922b6e67c973c90c14b5">compareLinesDirect</a></div><div class="ttdeci">int compareLinesDirect(const Line &amp;str1, const Line &amp;str2)</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:17</div></div>
+<div class="ttc" id="asortlib_8h_html_a1eb9da60fffec93dc41a1ac3551ee473"><div class="ttname"><a href="sortlib_8h.html#a1eb9da60fffec93dc41a1ac3551ee473">compareLinesReverse</a></div><div class="ttdeci">int compareLinesReverse(const Line &amp;str1, const Line &amp;str2)</div><div class="ttdef"><b>Definition:</b> sortlib.cpp:65</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

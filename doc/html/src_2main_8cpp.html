@@ -76,23 +76,10 @@ $(function() {
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="_mapped_file_8h_source.html">MappedFile.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sortlib_8h_source.html">sortlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="text__helpers_8h_source.html">text_helpers.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a55973a90edb7d8e746cfbf5c7fd69cab"><td class="memItemLeft" align="right" valign="top"><a id="a55973a90edb7d8e746cfbf5c7fd69cab"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnglishAlpha</b> (unsigned char c)</td></tr>
-<tr class="separator:a55973a90edb7d8e746cfbf5c7fd69cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac397430f1e58cc9fa8142d430d7af97f"><td class="memItemLeft" align="right" valign="top"><a id="ac397430f1e58cc9fa8142d430d7af97f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRussianAlpha</b> (unsigned char first, unsigned char second)</td></tr>
-<tr class="separator:ac397430f1e58cc9fa8142d430d7af97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a900a7a6c4b1b0ee63a2116e233dda7"><td class="memItemLeft" align="right" valign="top"><a id="a0a900a7a6c4b1b0ee63a2116e233dda7"></a>
-unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getAlphaSizeDirect</b> (unsigned char first, unsigned char second)</td></tr>
-<tr class="separator:a0a900a7a6c4b1b0ee63a2116e233dda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31a7358b68460158c3e9da865f5a4a2"><td class="memItemLeft" align="right" valign="top"><a id="ae31a7358b68460158c3e9da865f5a4a2"></a>
-unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>getAlphaSizeReverse</b> (unsigned char first, unsigned char second)</td></tr>
-<tr class="separator:ae31a7358b68460158c3e9da865f5a4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc035bd1334a517c0298377e3d3f6a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_line.html">Line</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#a3bc035bd1334a517c0298377e3d3f6a4">splitLines</a> (char *start, size_t len)</td></tr>
-<tr class="separator:a3bc035bd1334a517c0298377e3d3f6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4977af67cdd441a56e35c3b7161d476e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#a4977af67cdd441a56e35c3b7161d476e">writeLines</a> (const std::vector&lt; <a class="el" href="struct_line.html">Line</a> &gt; &amp;lines, const char *fileName)</td></tr>
 <tr class="separator:a4977af67cdd441a56e35c3b7161d476e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808a583438181e2d08861bcecf847a4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="src_2main_8cpp.html#a808a583438181e2d08861bcecf847a4c">writeSortedDirect</a> (std::vector&lt; <a class="el" href="struct_line.html">Line</a> &gt; lines, const char *fileName)</td></tr>
@@ -106,42 +93,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, ch
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3bc035bd1334a517c0298377e3d3f6a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bc035bd1334a517c0298377e3d3f6a4">&#9670;&nbsp;</a></span>splitLines()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="struct_line.html">Line</a>&gt; splitLines </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Splits the given text by lines (by '\n' symbols). Empty lines (lines without letters) are removed. Each '\n' replaced with '\0'. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>pointer to a first character of the text to split </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of the text to split </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>vector of <a class="el" href="struct_line.html">Line</a> - pointers to the first and last symbol of the line. </dd></dl>
-
-</div>
-</div>
 <a id="a4977af67cdd441a56e35c3b7161d476e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4977af67cdd441a56e35c3b7161d476e">&#9670;&nbsp;</a></span>writeLines()</h2>
 

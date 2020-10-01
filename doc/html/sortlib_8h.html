@@ -66,7 +66,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">sortlib.h File Reference</div>  </div>
@@ -76,14 +75,10 @@ $(function() {
 <p>Header file with sorting functions description.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="text__helpers_8h_source.html">text_helpers.h</a>&quot;</code><br />
 </div>
 <p><a href="sortlib_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_line.html">Line</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a73fb0070eeeb922b6e67c973c90c14b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sortlib_8h.html#a73fb0070eeeb922b6e67c973c90c14b5">compareLinesDirect</a> (const <a class="el" href="struct_line.html">Line</a> &amp;str1, const <a class="el" href="struct_line.html">Line</a> &amp;str2)</td></tr>
@@ -128,7 +123,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; zero, if both Lines are equal. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; <br  />
+ positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; <br  />
+ zero, if both Lines are equal.</dd></dl>
+<p>Compares two Lines in direct (from left to right) order. Punctuation and space symbols are skipped - only letters are compared. Supports english and russian letters in UTF-8 encoding. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; <br  />
+ positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; <br  />
+ zero, if both Lines are equal. </dd></dl>
 
 </div>
 </div>
@@ -164,7 +171,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; zero, if both Lines are equal. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; <br  />
+ positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; <br  />
+ zero, if both Lines are equal.</dd></dl>
+<p>Compares two Lines in reverse (from right to left) order. Punctuation and space symbols are skipped - only letters are compared. Supports english and russian letters in UTF-8 encoding. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str1</td><td>first <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str2</td><td>second <a class="el" href="struct_line.html">Line</a> to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>negative number, if first <a class="el" href="struct_line.html">Line</a> is less than second; <br  />
+ positive number, if first <a class="el" href="struct_line.html">Line</a> is greater than second; <br  />
+ zero, if both Lines are equal. </dd></dl>
 
 </div>
 </div>
@@ -203,7 +222,10 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">begin</td><td>iterator to the start (inclusive) of the sorting range </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>iterator to the end (exclusive) ot the sorting range </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">compare</td><td>pointer to the comparator. Comparator should return: negative value, if a &lt; b; positive value, if a &gt; b; zero, if a == b. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">compare</td><td>pointer to the comparator. Comparator should return: <br  />
+ negative value, if a &lt; b; <br  />
+ positive value, if a &gt; b; <br  />
+ zero, if a == b. </td></tr>
   </table>
   </dd>
 </dl>

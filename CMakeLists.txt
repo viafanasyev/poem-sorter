@@ -11,7 +11,9 @@ add_executable(
         src/sortlib.h
         src/sortlib.cpp
         src/MappedFile.cpp
-        src/MappedFile.h)
+        src/MappedFile.h
+        src/text_helpers.h
+        src/text_helpers.cpp)
 
 add_executable(
         tests
@@ -20,7 +22,10 @@ add_executable(
         test/main.cpp
         test/sortlib_tests.cpp
         test/MappedFile_tests.cpp
+        test/text_helpers_tests.cpp
         src/sortlib.h
         src/sortlib.cpp
         src/MappedFile.cpp
-        src/MappedFile.h)
+        src/MappedFile.h
+        src/text_helpers.h
+        src/text_helpers.cpp)

@@ -6,7 +6,7 @@ This program is developed as a part of ISP RAS course.
 
 Program can sort poems (or any other text files) in direct (left to right) and reverse (right to left) orders line by line.  
 
-Only english language is supported so far.
+English and russian languages in UTF-8 encoding are supported so far.
 
 ### Structure
 
@@ -14,12 +14,14 @@ Only english language is supported so far.
     * main.cpp : Entry point for the program.
     * sortlib.h, sortlib.cpp : Library for sorting texts in different directions.
     * MappedFile.h, MappedFile.cpp : Class for simplifying mapping file in memory.
+    * text_helpers.h, text_helpers.cpp : Helper functions that make it easier to work with english and russian text in UTF-8.
 
 * test/ : Tests and testing library
     * testlib.h, testlib.cpp : Library for testing with assertions and helper macros.
     * main.cpp : Entry point for tests. Just runs all tests.
     * sortlib_tests.cpp : Sorting library tests.
     * MappedFile_tests.cpp : MappedFile class tests.
+    * text_helpers_tests.cpp : Text helper functions tests.
 
 * doc/ : doxygen documentation
 

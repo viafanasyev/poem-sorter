@@ -6,37 +6,7 @@
 #include <vector>
 #include "MappedFile.h"
 #include "sortlib.h"
-
-/**
- * Splits the given text by lines (by '\\n' symbols). Empty lines (lines without letters) are removed.
- * Each '\\n' replaced with '\\0'.
- * @param[in] start pointer to a first character of the text to split
- * @param[in] len   length of the text to split
- * @return vector of Line - pointers to the first and last symbol of the line.
- */
-std::vector<Line> splitLines(char* start, size_t len) {
-    assert(start != nullptr);
-
-    std::vector<Line> lines;
-
-    char* end = start + len;
-    char* cur = start;
-    bool containsAlpha = false;
-    while (cur < end) {
-        containsAlpha = false;
-        while (cur < end && *cur != '\n') {
-            containsAlpha |= tolower(*cur) >= 'a' && tolower(*cur) <= 'z';
-            ++cur;
-        }
-        if (containsAlpha) {
-            lines.emplace_back(start, cur - 1);
-        }
-        *cur = '\0';
-        start = ++cur;
-    }
-
-    return lines;
-}
+#include "text_helpers.h"
 
 /**
  * Writes lines to the given file.

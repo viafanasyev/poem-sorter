@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['run_66',['run',['../class_test.html#a65ec5becbadad3887dadc7db7ed54b29',1,'Test']]],
-  ['runalltests_67',['runAllTests',['../class_test_runner.html#ac932511328802eb63e9b37ca02a62b9a',1,'TestRunner']]]
+  ['mappedfile_85',['MappedFile',['../class_mapped_file.html#ae7286b88514a1b434553470353f6d102',1,'MappedFile']]]
 ];

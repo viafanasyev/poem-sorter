@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Quadratic equation solver: src/text_helpers.h File Reference</title>
+<title>Quadratic equation solver: src/text_helpers.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,157 +66,39 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">text_helpers.h File Reference</div>  </div>
+<div class="title">text_helpers.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Header file with description of helper functions for UTF-8 text.  
+<p>Source file with implementation of helper functions for UTF-8 text.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;cctype&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-</div>
-<p><a href="text__helpers_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_line.html">Line</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
+<code>#include &quot;<a class="el" href="text__helpers_8h_source.html">text_helpers.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a55973a90edb7d8e746cfbf5c7fd69cab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a55973a90edb7d8e746cfbf5c7fd69cab">isEnglishAlpha</a> (unsigned char c)</td></tr>
+<tr class="memitem:a55973a90edb7d8e746cfbf5c7fd69cab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#a55973a90edb7d8e746cfbf5c7fd69cab">isEnglishAlpha</a> (unsigned char c)</td></tr>
 <tr class="separator:a55973a90edb7d8e746cfbf5c7fd69cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac397430f1e58cc9fa8142d430d7af97f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#ac397430f1e58cc9fa8142d430d7af97f">isRussianAlpha</a> (unsigned char first, unsigned char second)</td></tr>
+<tr class="memitem:ac397430f1e58cc9fa8142d430d7af97f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#ac397430f1e58cc9fa8142d430d7af97f">isRussianAlpha</a> (unsigned char first, unsigned char second)</td></tr>
 <tr class="separator:ac397430f1e58cc9fa8142d430d7af97f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a900a7a6c4b1b0ee63a2116e233dda7"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a0a900a7a6c4b1b0ee63a2116e233dda7">getAlphaSizeDirect</a> (unsigned char first, unsigned char second)</td></tr>
+<tr class="memitem:a0a900a7a6c4b1b0ee63a2116e233dda7"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#a0a900a7a6c4b1b0ee63a2116e233dda7">getAlphaSizeDirect</a> (unsigned char first, unsigned char second)</td></tr>
 <tr class="separator:a0a900a7a6c4b1b0ee63a2116e233dda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31a7358b68460158c3e9da865f5a4a2"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#ae31a7358b68460158c3e9da865f5a4a2">getAlphaSizeReverse</a> (unsigned char first, unsigned char second)</td></tr>
+<tr class="memitem:ae31a7358b68460158c3e9da865f5a4a2"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#ae31a7358b68460158c3e9da865f5a4a2">getAlphaSizeReverse</a> (unsigned char first, unsigned char second)</td></tr>
 <tr class="separator:ae31a7358b68460158c3e9da865f5a4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb1666def45de04e3f91042ed685e6cb"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#adb1666def45de04e3f91042ed685e6cb">getRussianAlphaOrdinal</a> (unsigned char first, unsigned char second)</td></tr>
+<tr class="memitem:adb1666def45de04e3f91042ed685e6cb"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#adb1666def45de04e3f91042ed685e6cb">getRussianAlphaOrdinal</a> (unsigned char first, unsigned char second)</td></tr>
 <tr class="separator:adb1666def45de04e3f91042ed685e6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed372fc8b95e03a039815f43a36fe73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a3ed372fc8b95e03a039815f43a36fe73">compareEnglishAlphas</a> (unsigned char c1, unsigned char c2)</td></tr>
-<tr class="separator:a3ed372fc8b95e03a039815f43a36fe73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f44087f4e172c5e0160341087723942"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a7f44087f4e172c5e0160341087723942">compareRussianAlphas</a> (unsigned char first1, unsigned char second1, unsigned char first2, unsigned char second2)</td></tr>
-<tr class="separator:a7f44087f4e172c5e0160341087723942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05408b1993499fd97a90d453abc9ecd7"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a05408b1993499fd97a90d453abc9ecd7">seekAlphaDirect</a> (const char *&amp;strPtr, const char *lineEnd)</td></tr>
+<tr class="memitem:a05408b1993499fd97a90d453abc9ecd7"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#a05408b1993499fd97a90d453abc9ecd7">seekAlphaDirect</a> (const char *&amp;strPtr, const char *lineEnd)</td></tr>
 <tr class="separator:a05408b1993499fd97a90d453abc9ecd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac35fcd51d979ef012984315f58120d2a"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#ac35fcd51d979ef012984315f58120d2a">seekAlphaReverse</a> (const char *&amp;strPtr, const char *lineStart)</td></tr>
+<tr class="memitem:ac35fcd51d979ef012984315f58120d2a"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#ac35fcd51d979ef012984315f58120d2a">seekAlphaReverse</a> (const char *&amp;strPtr, const char *lineStart)</td></tr>
 <tr class="separator:ac35fcd51d979ef012984315f58120d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bc035bd1334a517c0298377e3d3f6a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_line.html">Line</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8h.html#a3bc035bd1334a517c0298377e3d3f6a4">splitLines</a> (char *start, size_t len)</td></tr>
+<tr class="memitem:a3bc035bd1334a517c0298377e3d3f6a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_line.html">Line</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="text__helpers_8cpp.html#a3bc035bd1334a517c0298377e3d3f6a4">splitLines</a> (char *start, size_t len)</td></tr>
 <tr class="separator:a3bc035bd1334a517c0298377e3d3f6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file with description of helper functions for UTF-8 text. </p>
+<div class="textblock"><p>Source file with implementation of helper functions for UTF-8 text. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3ed372fc8b95e03a039815f43a36fe73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ed372fc8b95e03a039815f43a36fe73">&#9670;&nbsp;</a></span>compareEnglishAlphas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int compareEnglishAlphas </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>c1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>c2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Compares two english letters. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c1</td><td>first letter to compare </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">c2</td><td>second letter to compare. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>negative number, if first letter is less than second; <br  />
- positive number, if first letter is greater than second; <br  />
- zero, if both letters are equal. </dd></dl>
-
-</div>
-</div>
-<a id="a7f44087f4e172c5e0160341087723942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f44087f4e172c5e0160341087723942">&#9670;&nbsp;</a></span>compareRussianAlphas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int compareRussianAlphas </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>first1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>second1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>first2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>second2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Compares two russian letters in UTF-8 encoding. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">first1</td><td>high byte of the first letter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">second1</td><td>low byte of the first letter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">first2</td><td>high byte of the second letter </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">second2</td><td>low byte of the second letter </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>negative number, if first letter is less than second; <br  />
- positive number, if first letter is greater than second; <br  />
- zero, if both letters are equal. </dd></dl>
-
-</div>
-</div>
 <a id="a0a900a7a6c4b1b0ee63a2116e233dda7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a900a7a6c4b1b0ee63a2116e233dda7">&#9670;&nbsp;</a></span>getAlphaSizeDirect()</h2>
 
