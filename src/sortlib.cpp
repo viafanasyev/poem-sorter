@@ -3,6 +3,7 @@
  * @brief Source file with sorting functions implementation
  */
 #include <cassert>
+#include <cstdlib>
 #include "sortlib.h"
 
 /**

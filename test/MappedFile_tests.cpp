@@ -34,5 +34,5 @@ TEST(MappedFileConstructor, mappingForNonExistingFile) {
     MappedFile mappedFile(fileName);
 
     ASSERT_EQUALS(mappedFile.getTextSize(), 0);
-    ASSERT_EQUALS(mappedFile.getTextPtr(), nullptr);
+    ASSERT_TRUE(mappedFile.getTextPtr() == nullptr);
 }
